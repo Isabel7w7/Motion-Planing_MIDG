@@ -1,0 +1,33 @@
+# 🤖 PRM Path Planning - LEGO NXT Simulation
+### Ingeniería en TICs | ITESS Campus Salvatierra
+
+Este proyecto implementa un algoritmo de **Probabilistic Roadmap (PRM)** para la planificación de rutas en un entorno 2D con obstáculos. El objetivo es generar una ruta segura y traducirla a **comandos cinemáticos** compatibles con un robot LEGO Mindstorms NXT.
+
+## 🚀 Características
+* **PRM Uniforme:** Generación de 1000 nodos aleatorios evitando colisiones.
+* **A* Search:** Algoritmo de búsqueda de ruta óptima basado en costo y heurística.
+* **Modelo Cinemático:** Conversión de coordenadas $(x, y)$ a comandos de `GIRO` y `RECTO`.
+* **Visualización Dinámica:** Animación con `matplotlib` que incluye:
+    * Rastro de seguimiento (Trail).
+    * Indicador de orientación del robot.
+    * Mapa de obstáculos estáticos.
+
+## 🛠️ Tecnologías Utilizadas
+* **Lenguaje:** Python 3.x
+* **Librerías:** * `numpy` & `scipy` (Cálculos matemáticos y KDTree).
+    * `matplotlib` (Simulación visual y animación).
+    * `heapq` (Gestión de prioridades para A*).
+
+## 📂 Estructura del Código
+* `sim2d.py`: Librería core donde reside la lógica de colisiones, PRM y cinemática.
+* `assignment3.py`: Script principal para configurar el mapa, inicio y meta.
+
+## ⚙️ Configuración del Mapa
+El entorno se define mediante un diccionario de opciones:
+```python
+options['MAP_SIZE'] = [2.0, 2.0]
+options['OBSTACLES'] = [
+    [0.0, 1.5, 1.0, 0.5], # x, y, ancho, alto
+    [0.4, 0.5, 0.6, 0.5],
+    # ... más obstáculos
+]
